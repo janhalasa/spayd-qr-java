@@ -16,19 +16,19 @@ import java.util.Map;
 
 public class SpaydQrCodeGenerator {
 
-    public byte[] generateQrCode(Payment payment, int size)
+    public static byte[] generateQrCode(Payment payment, int size)
             throws IOException, WriterException {
         String code = SpaydSerializer.serialize(payment);
         return generateQrCodeFromString(code, size);
     }
 
-    public byte[] generateQrCode(Payment payment, int size, boolean includeChecksum, boolean normalizeStrings)
+    public static byte[] generateQrCode(Payment payment, int size, boolean includeChecksum, boolean normalizeStrings)
             throws IOException, WriterException {
         String code = SpaydSerializer.serialize(payment, includeChecksum, normalizeStrings);
         return generateQrCodeFromString(code, size);
     }
 
-    public byte[] generateQrCodeFromString(String spaydString, int size) throws IOException, WriterException {
+    public static byte[] generateQrCodeFromString(String spaydString, int size) throws IOException, WriterException {
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
         Map<EncodeHintType, Object> hints = new EnumMap<>(EncodeHintType.class);
         hints.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.M);

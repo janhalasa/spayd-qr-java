@@ -11,7 +11,7 @@ class SpaydQrCodeGeneratorTest {
     @Test
     void givenPaymentString_whenGenerateQrCode_thenValidQrCode() throws Exception {
         String spaydString = "SPD*1.0*ACC:CZ5508000000001234567899+GIBACZPX*AM:123.45*CC:CZK*DT:20290131*MSG:ZPRAVA PRO PRIJEMCE";
-        byte[] qrCode = new SpaydQrCodeGenerator().generateQrCodeFromString(spaydString, 100);
+        byte[] qrCode = SpaydQrCodeGenerator.generateQrCodeFromString(spaydString, 100);
         assertNotNull(qrCode);
     }
 
@@ -24,7 +24,7 @@ class SpaydQrCodeGeneratorTest {
                 .paymentDueDate(java.time.LocalDate.of(2029, 1, 31))
                 .paymentNote("ZPRAVA PRO PRIJEMCE")
                 .build();
-        byte[] qrCode = new SpaydQrCodeGenerator().generateQrCode(payment, 100);
+        byte[] qrCode = SpaydQrCodeGenerator.generateQrCode(payment, 100);
         assertNotNull(qrCode);
     }
 
@@ -37,7 +37,7 @@ class SpaydQrCodeGeneratorTest {
                 .paymentDueDate(java.time.LocalDate.of(2029, 1, 31))
                 .paymentNote("ZPRAVA PRO PRIJEMCE")
                 .build();
-        byte[] qrImage = new SpaydQrCodeGenerator().generateQrCode(payment, 100, true, false);
+        byte[] qrImage = SpaydQrCodeGenerator.generateQrCode(payment, 100, true, false);
         assertNotNull(qrImage);
         java.nio.file.Files.write(java.nio.file.Path.of("spayd-qr.png"), qrImage);
     }
