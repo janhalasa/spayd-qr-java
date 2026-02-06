@@ -33,7 +33,7 @@ Add the following dependencies to your `pom.xml`:
     <dependency>
         <groupId>io.github.janhalasa</groupId>
         <artifactId>spayd-qr-java</artifactId>
-        <version>1.0.1</version>
+        <version>1.0.2</version>
     </dependency>
 </dependencies>
 ```
@@ -42,7 +42,7 @@ Add the following dependencies to your `pom.xml`:
 
 ```groovy
 dependencies {
-    compile "io.github.janhalasa:spayd-qr-java:1.0.1"
+    compile "io.github.janhalasa:spayd-qr-java:1.0.2"
 }
 ```
 
