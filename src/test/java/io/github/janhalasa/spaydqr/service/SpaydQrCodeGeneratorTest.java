@@ -39,6 +39,6 @@ class SpaydQrCodeGeneratorTest {
                 .build();
         byte[] qrImage = SpaydQrCodeGenerator.generateQrCode(payment, 100, true, false);
         assertNotNull(qrImage);
-        java.nio.file.Files.write(java.nio.file.Path.of("spayd-qr.png"), qrImage);
+        // java.nio.file.Files.write(java.nio.file.Path.of("spayd-qr.png"), qrImage);
     }
 }
