@@ -4,6 +4,8 @@ Java library for generating QR for payments in SPAYD standard used in Czechia.
 The result is either an "SPD String" or a QR code in PNG format.
 The "SPD String" may be useful if you want to use a different QR code generator.
 
+If you like this library, please give it a star, so I know someone uses it.
+
 ## Overview
 
 Java implementation of the [Czech SPAYD](https://qr-platba.cz/pro-vyvojare/specifikace-formatu/) QR code standard for bank payments.
